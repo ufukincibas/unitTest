@@ -1,10 +1,12 @@
 import React from "react";
 import { Text , View } from "react-native";
+import Button from "./components/Button";
 
 function App(){
   return(
     <View>
-      <Text></Text>
+      <Text>Hello Testing</Text>
+     <Button title="Testing is Easy"/>
     </View>
   )
 }
