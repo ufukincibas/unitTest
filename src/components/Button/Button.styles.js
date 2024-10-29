@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
 
-export default StyleSheet.create({
+export default {
+    PRİMARY : StyleSheet.create({
     container: {
-        backgroundColor: "blue" ,
+        backgroundColor : "blue" ,
         padding: 10,
         margin:10,
         borderRadius: 10 ,
@@ -13,4 +14,19 @@ export default StyleSheet.create({
         color:"white" ,
         fontWeight: "bold",
     }
-})
+}),
+SECONDARY : StyleSheet.create({
+    container: {
+        borderWidth:1 ,
+        borderColor: "blue" ,
+        padding: 10,
+        margin:10,
+        borderRadius: 10 ,
+        justifyContent:"center" ,
+        alignItems: "center" ,
+    } ,
+    title: {
+        color:"blue" ,
+        fontWeight: "bold",
+    }
+})}
