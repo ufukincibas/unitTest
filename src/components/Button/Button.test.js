@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react-native"
+import { render , fireEvent } from "@testing-library/react-native"
 import Button from "./Button"
 
 
@@ -9,7 +9,7 @@ test("should match with snapshot" ,  () => {
 
 test("check number" , () => {
     expect(5+6).toBe(11)  //5+6 nın 11 olmasını bekliyorum gibi bir kullanımı  var
-})
+});
 
 test("should render title correctly" , () => {
     const testTitle = "test"
@@ -17,5 +17,16 @@ test("should render title correctly" , () => {
 
     const buttonText = comp.getByTestId("button-title").children[0]// 'button-title' id'li öğeyi buluyoruz
 
-    expect(buttonText).toBe(testTitle)
+    expect(buttonText).toBe(testTitle) //title gonderince render oluyor mu kontrolu
+})
+
+test("should triger onPress correctly" , () => {
+    const onClickFunction = jest.fn(); //jestin sagladıgı ozel bir func tetiklenip tetiklenmedigini kontrol etmek icin
+    const comp =render(<Button onClick={onClickFunction}/>);
+
+    const buttonTouchable = comp.getByTestId("button-touchable"); //test id ye sahip elementi getir
+
+    fireEvent(buttonTouchable, "press") //touchable opacity i yakala press event ini tetikle
+   
+    expect(onClickFunction).toBeCalled();
 })

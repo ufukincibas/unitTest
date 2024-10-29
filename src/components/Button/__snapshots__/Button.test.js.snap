@@ -41,6 +41,7 @@ exports[`should match with snapshot 1`] = `
         "padding": 10,
       }
     }
+    testID="button-touchable"
   >
     <Text
       style={
